@@ -23,12 +23,12 @@ Here is how you can use the `AudioProcessor` to convert speech to text:
 ```python
 from sonus_av import AudioProcessor
 
-# Initialize the processor with your OpenAI API key
-audio_processor = AudioProcessor(openai_api_key='your-openai-api-key')
+# Initialize the processor
+audio_processor = AudioProcessor()
 
 # Capture and translate audio to text
-translated_text = audio_processor.capture_and_translate('path_to_your_audio_file.wav')
-print(translated_text)
+recognized_text = audio_processor.capture('path_to_your_audio_file.wav')
+print(recognized_text)
 ```
 
 ### Image Processing
@@ -38,10 +38,10 @@ Here is how you can use the `ImageProcessor` to get a description of an image:
 from sonus_av import ImageProcessor
 
 # Initialize the processor with your OpenAI API key
-image_processor = ImageProcessor(openai_api_key='your-openai-api-key')
+image_processor = ImageProcessor(api_key='your-openai-api-key')
 
 # Get an image description
-image_description = image_processor.describe_image('url_to_your_image')
+image_description = image_processor.describe_image(image_path)
 print(image_description)
 ```
 
